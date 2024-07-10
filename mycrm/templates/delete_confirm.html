@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Confirmation</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/employee_record.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h5>Confirm Deletion</h5>
+            </div>
+            <div class="card-body">
+                <p>Are you sure you want to delete the record for {{ employee_record.first_name }} {{ employee_record.last_name }}?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <a href="{% url 'record' employee_record.id %}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

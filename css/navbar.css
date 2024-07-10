@@ -1,0 +1,69 @@
+/* navbar.css */
+
+/* Base styling for the navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #dc71ff ;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #0056b3;
+}
+
+/* Navbar link styling */
+.navbar-nav .nav-link {
+    color: #555555;
+    margin-right: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Active link styling */
+.navbar-nav .nav-link.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Disabled link styling */
+.navbar-nav .nav-link.disabled {
+    color: #cccccc;
+}
+
+/* Toggler button styling */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.5%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+/* Navbar background color change on scroll */
+.navbar.scrolled {
+    background-color: #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+    color: #ffffff;
+}
+
+.navbar.scrolled .navbar-brand:hover,
+.navbar.scrolled .nav-link:hover {
+    color: #ffffff;
+}

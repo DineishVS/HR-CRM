@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display CSV File Contents</title>
+    <link rel="stylesheet" type="text/css" href="css/display.css">
+</head>
+<body>
+    <h1>CSV File Contents</h1>
+    <table border="1">
+        {% for row in csv_data %}
+            <tr>
+                {% for column in row %}
+                    <td>{{ column }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Record</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/employee_record.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% block content %}
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h5>Employee Record</h5>
+            </div>
+            <div class="card-body">
+                <table class="record-table">
+                    <tbody>
+                        <tr>
+                            <th>ID</th>
+                            <td>{{ employee_record.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Created At</th>
+                            <td>{{ employee_record.created_at }}</td>
+                        </tr>
+                        <tr>
+                            <th>First Name</th>
+                            <td>{{ employee_record.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Last Name</th>
+                            <td>{{ employee_record.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ employee_record.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone Number</th>
+                            <td>{{ employee_record.phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <th>City</th>
+                            <td>{{ employee_record.city }}</td>
+                        </tr>
+                        <tr>
+                            <th>State</th>
+                            <td>{{ employee_record.state }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'home' %}" class="btn btn-secondary">Go Back</a>
+                <a href="{% url 'delete' employee_record.id %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'update' employee_record.id %}" class="btn btn-success">Update</a>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>
